@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dang nhap</title>
+    <link rel="stylesheet" type="text/css" href="./public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./public/javascripts/bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="./public/css/sign.css">
+</head>
+<body>
+    <div class="container" id="form_container" >
+        <div>
+            <img src="thu_vien/image/logo.png">
+        </div>
+        <form action="/action_page.php">
+            <div class="form-group">
+              <label for="taikhoan">Tài khoản:</label>
+              <input type="text" class="form-control" id="taikhoan" placeholder="Nhập tài khoản" name="taikhoan">
+            </div>
+            <div class="form-group">
+              <label for="matkhau">Mật khẩu:</label>
+              <input type="password" class="form-control" id="matkhau" placeholder="Nhập mật khẩu" name="matkhau">
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="nhotaikhoan"> Nhớ tài khoản
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+        </form>
+    </div>
+</body>
+</html>
