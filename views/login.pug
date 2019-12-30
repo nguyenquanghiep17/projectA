@@ -1,26 +1,73 @@
-head
-  meta(charset='utf-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  meta(name='description', content='')
-  meta(name='author', content='')
-  link(rel='icon', href='/docs/4.0/assets/img/favicons/favicon.ico')
-  title Signin Template for Bootstrap
-  link(rel='canonical', href='https://getbootstrap.com/docs/4.0/examples/sign-in/')
-  // Bootstrap core CSS
-  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
-  // Custom styles for this template
-  link(href='signin.css', rel='stylesheet')
-form.form-signin(method='post')
-  img.mb-4(src='https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg', alt='', width='72', height='72')
-  h1.h3.mb-3.font-weight-normal Please sign in
-  label.sr-only(for='inputEmail') Email address
-  input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='' name='name')
-  label.sr-only(for='inputPassword') Password
-  input#inputPassword.form-control(type='password', placeholder='Password', required='' name = 'pass')
-  .checkbox.mb-3
-    label
-      input(type='checkbox', value='remember-me')
-      |  Remember me
-  button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
-  p.mt-5.mb-3.text-muted &copy; 2017-2018
-script(src='../public/javascripts/adduser.js')
+
+html
+  include ./layouts/header
+  body
+    .content
+      nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark.row
+        a.logo.col-12.navbar-brand(href='#') ABC University  
+        //- #navbarCollapse.collapse.navbar-collapse.col-2
+        //-   ul.navbar-nav
+        //-     li.nav-item
+        //-       a.nav-link(href='/') Home 
+        //-     li.nav-item
+        //-       a.nav-link(href='/listing') View all listings
+        //-     li.nav-item
+        //-   a.nav-link(href='/tutorial') Tutorial
+      .center
+        .left-screen
+          h1.h1.mb-3.font-weight-normal.notification Thông báo
+
+        .right-screen
+          form(method='POST').form-signin.center
+            //img.mb-4(src='/docs/4.3/assets/brand/bootstrap-solid.svg', alt='', width='72', height='72')
+            h1.h1.mb-3.font-weight-normal Đăng nhập
+            input#inputEmail.form-control(type='username', placeholder='Tên truy cập', required='', autofocus='' name='username')
+            br
+            input#inputPassword.form-control(type='password', placeholder='Mật khẩu', required='' name='password')
+            .checkbox.mb-3
+              label.remember
+                input(type='checkbox', value='remember-me')
+                |  Ghi nhớ
+              label.forgetPassword
+                a(href='#') Quên mật khẩu?
+            button.btn.btn-lg.btn-primary.btn-block(type='submit') Đăng nhập
+
+
+      include ./layouts/footer
+        //- #navbarCollapse.collapse.navbar-collapse.col-2
+        //-   ul.navbar-nav
+        //-     li.nav-item
+        //-       a.nav-link(href='/') Home 
+        //-     li.nav-item
+        //-       a.nav-link(href='/listing') View all listings
+        //-     li.nav-item
+        //-       a.nav-link(href='/tutorial') Tutorial
+      //- nav.navbar.navbar-expand-md.navbar-dark.fixed-bottom.bg-dark.row
+      //-   a.bottom.col-12.navbar-brand.bg-dark(href='#') &copy; 2019-2020
+
+=======
+include head.pug
+#form_container.container
+  nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
+    a.navbar-brand(href='#') ABC UNIVERSITY
+    .collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(href='') &Dstrok;&abreve;ng Nh&#x1EAD;p
+  div
+    img(src='./public/img/logo.png')
+  form#form
+    .form-group
+      label(for='taikhoan') T&agrave;i kho&#x1EA3;n:
+      input#taikhoan.form-control(type='text', placeholder='Nhập tài khoản', name='taikhoan')
+    .form-group
+      label(for='matkhau') M&#x1EAD;t kh&#x1EA9;u:
+      input#matkhau.form-control(type='password', placeholder='Nhập mật khẩu', name='matkhau')
+    .form-group.form-check
+      label.form-check-label
+        input.form-check-input(type='checkbox', name='nhotaikhoan')
+        |  Nh&#x1EDB; t&agrave;i kho&#x1EA3;n
+    button.btn.btn-primary.btn-block(type='submit') &Dstrok;&abreve;ng nh&#x1EAD;p
+div(style='position: fixed;width: 100%; height: 80px;padding-top: 25px; bottom: 0px; text-align: center; background-color: whitesmoke')
+  p Trung tâm máy tính ABC UNIVERSITY
+>>>>>>> 47767a86c85bcbb92f89086faf0e2d65c768b590

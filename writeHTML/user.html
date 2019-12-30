@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Trang chủ</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./thu_vien/font-awesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="thu_vien/css/bootstrap.min.css">
+	<link rel="stylesheet" href="thu_vien/css/user.css">
+	<link rel="stylesheet" href="thu_vien/css/modal.css">
+</head>
+
+<body>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">ABC UNIVERSITY</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			</ul>
+			<button class="btn btn-primary my-2 my-sm-0" type="submit" style="margin-right:15px;">Thông báo</button>
+
+			<button class="btn btn-primary my-2 my-sm-0" type="submit">User</button>
+		</div>
+	</nav>
+
+	<div class="container" style="margin-top:70px">
+		<div class="collum">
+			<div class="col-3">
+				<img src="thu_vien/image/user.png" class="img-fluid" alt="user"><br>
+			</div>
+			<div class="col-9">
+				<h1>Hồ sơ sinh viên</h1><br>
+				<label><b>Họ và tên:</b></label>
+				Trần văn khải <br>
+				<label><b>Ngày tháng năm sinh:</b></label> 21/7/1999<br>
+				<label><b>Giới tính:</b></label> Nam<br>
+				<label><b>Số CCCD:</b></label> 21/7/1999<br>
+				<label><b>Quê quán:</b></label> 21/7/1999<br>
+				<label><b>Email_student:</b></label> 17020830@.....<br>
+				<label><b>Email:</b></label> khaitran....<br>
+				<label><b>Chuyên ngành:</b></label> 21/7/1999<br>
+				<label><b>Lớp chuyên ngành:</b></label> 21/7/1999<br>
+				<label><b>Quê quán:</b></label> 21/7/1999<br>
+
+			</div>
+		</div>
+		<br>
+		<div>
+			<button class="btn btn-outline-primary btn-block" id="myBtn" style="margin-right: 150px;">Chỉnh sửa thông tin</button>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>Chỉnh sửa thông tin cá nhân</h3>
+						<span class="close">&times;</span>
+					</div>
+
+					<div class="modal-body">
+						<form >
+							<label>Họ và tên:</label>
+							<input type="text" name="hoten"><br>
+
+							<label>Ngày tháng năm sinh:</label>
+							<input type="datetime" name="dateofbirth"><br>
+
+							<label>Giới tính</label>
+							<input type="radio">Nam
+							<input type="radio">Nữ<br>
+
+							<label>Số CCCD:</label>
+							<input type="text" name="CCCD"><br>
+
+							<label>Quê quán</label>
+							<input type="text" name="quequan"><br>
+							
+							<label>Email_student:</label>
+							<input type="email" name="e_t"><br>
+
+							<label>Email:</label>
+							<input type="email" name="e"><br>
+
+							<label>Chuyên ngành:</label>
+							<input type="text" name="chuyennganh"><br>
+
+							<label>Lớp chuyên ngành:</label>
+							<input type="text" name="l_chuyennganh"><br>
+
+							<button class="btn btn-primary btn-block" style="margin-top: 20px; margin-bottom: 20px;">Lưu</button>
+						</form>
+						
+					</div>
+				</div>
+			</div>
+
+			<script>
+				// Get the modal
+				var modal = document.getElementById("myModal");
+
+				// Get the button that opens the modal
+				var btn = document.getElementById("myBtn");
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks the button, open the modal 
+				btn.onclick = function () {
+					modal.style.display = "block";
+				}
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function () {
+					modal.style.display = "none";
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function (event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,5 +1,73 @@
-extends layout
+html
+  include ./layouts/dashboard
+  body
+    .content
+      nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark.row
+        a.col-10.navbar-brand(href='#') Bảng điều khiển
+        #navbarCollapse.collapse.navbar-collapse.col-2
+          ul.navbar-nav
+            li
+              a.username(href='#') #{user.username}
+            li 
+              p.username(style='display:inline') |
+            li.nave-item
+              a.username(href='dang-xuat')   
+                |   Đăng xuất
+      .center
+        .left-screen
+            .dashboard
+                ul.navbar-nav
+                    li.nav-item
+                      p#a1.nav-link Đăng ký môn thi
+                    li.nav-item
+                      p#a2.nav-link In danh sách đăng ký
+          
 
-block content
-  h1= title
-  p Welcome to #{title}
+        .right-screen
+
+         
+
+
+            form(action='/dang-ky', method='POST').form-signin.center
+                table.table
+                    thead.thead-dark
+                        tr
+                            th(scope='col') Đăng ký
+                            th(scope='col') Mã học phần
+                            th(scope='col') Tên môn học
+                    tbody
+                        
+                            each subject in subjectSchema
+                                tr
+                                    td 
+                                        input(type='checkbox', name='subject', value=subject.code)
+                                    td= subject.code
+                                    td= subject.name
+
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') Thêm
+                
+                
+            
+
+
+            
+
+
+
+
+        include ./layouts/footer
+        script(src='https://code.jquery.com/jquery-latest.js')
+        script(src='../public/javascripts/dashboard.js')
+        
+
+        //- #navbarCollapse.collapse.navbar-collapse.col-2
+        //-   ul.navbar-nav
+        //-     li.nav-item
+        //-       a.nav-link(href='/') Home 
+        //-     li.nav-item
+        //-       a.nav-link(href='/listing') View all listings
+        //-     li.nav-item
+        //-       a.nav-link(href='/tutorial') Tutorial
+      //- nav.navbar.navbar-expand-md.navbar-dark.fixed-bottom.bg-dark.row
+      //-   a.bottom.col-12.navbar-brand.bg-dark(href='#') &copy; 2019-2020
+

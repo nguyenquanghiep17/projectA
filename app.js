@@ -5,18 +5,22 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var databaseConfig = require('./configs/database.config.js');
-
+var bodyParser = require('body-parser');
+var session = require("express-session");
+var flash = require('connect-flash');
+var passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
-
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
 mongoose.connect(databaseConfig.url);
 
 
-console.log(mongoose);
+
+
 //Ép Mongoose sử dụng thư viện promise toàn cục
 // mongoose.Promise = global.Promise;
 // //Lấy kết nối mặc định
@@ -28,16 +32,32 @@ console.log(mongoose);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static('public'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'secured_key',
+  resave: false,
+  saveUninitialized : false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+
+app.use('/quan-tri', adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
